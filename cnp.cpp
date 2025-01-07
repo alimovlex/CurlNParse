@@ -161,7 +161,7 @@ std::string find_element_by_id(const std::string &html, const std::string &id) {
 
       if (closePos != std::string::npos) {
         std::string element = html.substr(pos, closePos + closingTag.length() - pos);
-        return get_element_text(element);
+        return get_element_text(element,"");
       }
     }
     pos = end_pos + 1;
@@ -222,4 +222,17 @@ std::string get_element_text(const std::string &html, const std::string &tag) {
   return text;
 } // namespace cnp
 
+    std::vector<std::string> extractUrls(const std::string& text) {
+        std::vector<std::string> urls;
+        std::regex urlPattern(R"((https?://[^\s\"<>]+))");
+        auto wordsBegin = std::sregex_iterator(text.begin(), text.end(), urlPattern);
+        auto wordsEnd = std::sregex_iterator();
 
+        for (std::sregex_iterator i = wordsBegin; i != wordsEnd; ++i) {
+            std::smatch match = *i;
+            urls.push_back(match.str());
+        }
+        return urls;
+    }
+}
+// namespace cnp
