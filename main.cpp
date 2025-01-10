@@ -35,6 +35,11 @@ int main() {
   for (auto s : attr_test) {
     std::cout << s << std::endl;
   }
+  std::vector<std::string> urls_in_webpage =
+            cnp::extractUrls(result_text);
+    for (auto s : urls_in_webpage) {
+      std::cout << s << std::endl;
+    }
 
   cnp::cleanup();
 
