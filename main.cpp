@@ -1,12 +1,12 @@
 
-#include "cnp.h"
+#include "cnp.hpp"
 #include <cstring>
 #include <fstream>
 #include <iostream>
 #include <string>
 
 int main() {
-  std::string url = "https://lichess.org/";
+  std::string url = "https://debian.org/";
 
   cnp::init();
 

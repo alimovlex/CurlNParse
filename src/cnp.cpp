@@ -1,4 +1,4 @@
-#include "cnp.h"
+#include "cnp.hpp"
 #include <algorithm>
 #include <cctype>
 #include <curl/curl.h>
