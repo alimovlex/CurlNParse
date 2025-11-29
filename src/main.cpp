@@ -6,7 +6,7 @@
 #include <string>
 
 int main() {
-  std::string url = "https://debian.org/";
+  std::string url = "https://www.chrismytton.com/plain-text-websites/";
 
   cnp::init();
 
